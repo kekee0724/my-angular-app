@@ -1,16 +1,7 @@
-/*
- * @Author: 可可同学
- * @Date: 2021-10-09 16:47:40
- * @LastEditTime: 2021-10-09 16:52:02
- * @LastEditors: 可可同学
- * @Description:
- */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-import { CartService } from '../cart.service';
 import { Product, products } from '../products';
-
+import { CartService } from '../cart.service';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
