@@ -1,12 +1,12 @@
 /*
  * @Author: 可可同学
  * @Date: 2021-10-09 16:51:28
- * @LastEditTime: 2021-10-09 17:22:19
+ * @LastEditTime: 2021-10-09 18:22:33
  * @LastEditors: 可可同学
  * @Description:
  */
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 import { Product } from './products';
 
 @Injectable({
@@ -14,7 +14,7 @@ import { Product } from './products';
 })
 export class CartService {
   items: Product[] = [];
-  constructor() {}
+  constructor(private http: HttpClient) { }
   addToCart(product: Product) {
     this.items.push(product);
   }
@@ -26,5 +26,9 @@ export class CartService {
   clearCart() {
     this.items = [];
     return this.items;
+  }
+
+  getShippingPrices() {
+    return this.http.get<{ type: string, price: number }[]>('/assets/shipping.json');
   }
 }

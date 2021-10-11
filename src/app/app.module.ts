@@ -1,10 +1,11 @@
 /*
  * @Author: 可可同学
  * @Date: 2021-10-09 10:38:46
- * @LastEditTime: 2021-10-09 17:25:07
+ * @LastEditTime: 2021-10-09 18:16:59
  * @LastEditors: 可可同学
  * @Description:
  */
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,6 +25,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
@@ -35,8 +37,9 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    ProductDetailsComponent,
     ProductAlertsComponent,
+    ProductDetailsComponent,
+    // CartComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
